@@ -21,16 +21,38 @@
     padding: 0.7rem;
 }
 
-.user-info button {
-    width: 10rem;
-    background-color: #f0c94d;
-    border: none;
-    border-radius: 1.5rem;
-    padding: 0.7rem ;
-    margin-left: 5rem;
-}
+
 
 .header .user-info {
     font-size: 18px;
     color: #333;
 } */
+
+
+.header{
+    display: flex;
+    box-sizing: border-box;
+    margin-left: 20vw;
+    margin-top: 1rem;
+}
+
+.header input {
+    border-radius: 1.5rem;
+    border: none;
+    background-color: #e4e4e4;
+    width: 30vw;
+    height: 2vh;
+    padding: 0.7rem;
+    margin-top: 1rem;
+  }
+  
+  .header button {
+    width: 13vw;
+    height: 5vh;
+    background-color: #f0c94d;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 0.5rem ;
+    margin-top: 1rem;
+    margin-left: 5rem;
+  }

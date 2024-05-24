@@ -1,0 +1,73 @@
+.empresa-page {
+    padding: 20px;
+    margin: 0vw 3vw;
+  }
+  
+  .empresa-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 10px;
+    width: 10vw;
+    
+  }
+  
+  .empresa-header h2 {
+    color: #333;
+  }
+  .empresa-header > button{
+    width: 2vw;
+    height: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: #C08900;
+    color: white;
+    font-weight: 700;
+  }
+  
+  .add-button {
+    background-color: #c79e2e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .empresa-header > button:hover {
+    background-color: #a88228;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .empresa-table {
+    width: 75vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .empresa-table th, .empresa-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .empresa-table th {
+    background-color: #C08900;
+    color: #333;
+  }
+  
+  .empresa-table tr {
+    background-color: #f7f7f7;
+  }
+  
+  .empresa-table tr:hover {
+    background-color: #ffffff;
+  }
+  

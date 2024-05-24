@@ -1,6 +1,7 @@
 import React from 'react';
 import "../PlanoDeContas/planoContas.css";
 import Sidebar from "../PlanoDeContas/Sidebar"
+import Header from './Header';
 
 const AccountPlan = () => {
 
@@ -19,12 +20,16 @@ const AccountPlan = () => {
 
 
     return (
-        <div className='account-plan-content'>
-            <Sidebar />
+        <> 
+        <div className='ContainerGeral'>
+        <Sidebar />
+       
+        <div className='ContainerPlanos'>
+            <Header />
             <section className='plan-section'>
                 <div className="text-button">
                     <h2>Plano de Contas</h2>
-                    <button className="add-button">+</button>
+                    <button>+</button>
                 </div>
 
                 <div className='table-content'>
@@ -53,6 +58,8 @@ const AccountPlan = () => {
                 </div>
             </section>
         </div>
+        </div>
+        </>
     )
 }
 

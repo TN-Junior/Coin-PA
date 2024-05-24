@@ -1,6 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 import Header from "../PlanoDeContas/Header"
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
@@ -13,8 +14,8 @@ const Sidebar = () => {
                 <nav>
                     <ul>
                         <li><a href="#dashboard">Dashboard</a></li>
-                        <li><a href="#empresas">Empresas</a></li>
-                        <li className="active"><a href="#planodecontas">Plano de Contas</a></li>
+                        <li><Link to="/Empresa">Empresas</Link></li>
+                        <li className="active"><a href="/plano">Plano de Contas</a></li>
                         <li><a href="#pagamentos">Pagamentos</a></li>
                         <li><a href="#usuarios">Usuários</a></li>
                         <li><a href="#planejamento">Planejamento Financeiro</a></li>
@@ -22,10 +23,7 @@ const Sidebar = () => {
                 </nav>
             </aside>
 
-            <div className="header">
-                <input type="text" placeholder="Pesquisar..." />
-                <button>Fernanda F.</button>
-            </div>
+            
             
         </div>
 

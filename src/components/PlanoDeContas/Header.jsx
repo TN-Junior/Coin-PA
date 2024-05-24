@@ -5,9 +5,7 @@ const Header = () => {
     return (
         <div className="header">
             <input type="text" placeholder="Pesquisar..." />
-            <div className="user-info">
                 <button>Fernanda F.</button>
-            </div>
         </div>
     );
 };
