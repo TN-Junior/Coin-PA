@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 //import Home from './components/Home'
+import Cadastro from './components/Cadastro/Cadastro';
 import Login from './components/Login/login';
 import PlanoContas from './components/PlanoDeContas/planoContas';
 import Sidebar from './components/PlanoDeContas/Sidebar';
