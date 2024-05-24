@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .sidebar-content {
@@ -21,8 +22,10 @@
 }
 
 .sidebar h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: 40px;
+  font-weight: 900;
+  margin-left: 3.4rem;
 }
 
 .sidebar nav ul {
@@ -31,18 +34,27 @@
 }
 
 .sidebar nav ul li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul li a:hover {
+  transition: 0.4s;
+  background-color: white;
+  border-radius: 10px;
+  padding:10px 40px 10px 40px;
+  color:#606060;
+  font-weight: 700;
+  
 }
 
 .sidebar nav ul li a {
   text-decoration: none;
   color: white;
   font-size: 18px;
+  font-weight: 700;
 }
 
-.sidebar nav ul li.active a {
-  font-weight: bold;
-}
+
 
 .sidebar .logout {
   margin-top: 20px;

@@ -5,6 +5,7 @@
 .ContainerPlanos{
   display: flex;
   flex-direction: column;
+  width: 70rem;
 }
 .ContainerGeral{
   display: flex;
@@ -33,6 +34,12 @@
   border-radius: 100%;
 }
 
+thead{
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
 .table-content {
   width: 100%;
   border-radius: 25rem;
@@ -47,11 +54,15 @@
 .table-content table th, .table-content table td {
   padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid white;
 }
 
 .table-content table td {
-  background-color: #f7f7f7;
+  background-color: #808080;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  
 }
 
 .table-content table th { /*primeira coluna do quadro */
@@ -59,13 +70,20 @@
 }
 
 .status.agendada {
-  color: #574b90;
+  color: #483a8f;
+  font-weight: 700;
 }
 
 .status.paga {
-  color: #38a169;
+  color: #2a784e;
+  font-weight: 700;
 }
 
 .status.vencida {
-  color: #e53e3e;
+  color: #903f3f;
+  font-weight: 700;
+}
+
+.table-content tbody td:hover{
+  background-color:#C08900 ;
 }

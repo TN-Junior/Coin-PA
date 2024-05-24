@@ -8,17 +8,17 @@ const Sidebar = () => {
         <div className='sidebar-content'>
             <aside className='sidebar'>
                 <header>
-                    <h1>coin</h1>
+                    <h1>Coin</h1>
                 </header>
 
                 <nav>
                     <ul>
-                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><Link to="/Dashboard">Dashboard</Link></li>
                         <li><Link to="/Empresa">Empresas</Link></li>
                         <li className="active"><a href="/plano">Plano de Contas</a></li>
                         <li><a href="#pagamentos">Pagamentos</a></li>
                         <li><a href="#usuarios">Usuários</a></li>
-                        <li><a href="#planejamento">Planejamento Financeiro</a></li>
+                        <li><a href="#planejamento">Planejamento</a></li>
                     </ul>
                 </nav>
             </aside>

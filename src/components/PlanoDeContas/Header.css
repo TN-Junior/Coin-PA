@@ -34,6 +34,8 @@
     box-sizing: border-box;
     margin-left: 20vw;
     margin-top: 1rem;
+    margin-left: 3rem;
+
 }
 
 .header input {
@@ -49,7 +51,7 @@
   .header button {
     width: 13vw;
     height: 5vh;
-    background-color: #f0c94d;
+    background-color: #C08900;
     border: none;
     border-radius: 1.5rem;
     padding: 0.5rem ;

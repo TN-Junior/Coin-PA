@@ -14,7 +14,9 @@
   }
   
   .empresa-header h2 {
-    color: #333;
+    margin-left: 1.8rem;
+      color: white;
+    font-weight: 700;
   }
   .empresa-header > button{
     width: 2vw;
@@ -60,14 +62,14 @@
   
   .empresa-table th {
     background-color: #C08900;
-    color: #333;
+    color: white;
   }
   
   .empresa-table tr {
-    background-color: #f7f7f7;
+    background-color: gray;
   }
   
   .empresa-table tr:hover {
-    background-color: #ffffff;
+    background-color: #C08900;
   }
   

@@ -5,6 +5,7 @@ import PlanoContas from './components/PlanoDeContas/planoContas';
 import Sidebar from './components/PlanoDeContas/Sidebar';
 import Header from './components/PlanoDeContas/Header';
 import Empresa from './components/Empresa/Empresa'
+import Dashboard from './components/Dashboard/dashboard'
 
 
 function Main(){
@@ -16,6 +17,7 @@ function Main(){
             <Route path='/plano' element={<Sidebar />} />
             <Route path='/plano' element={<Header />}/>
             <Route path='/Empresa' element={<Empresa />}/>
+            <Route path='/Dashboard' element={<Dashboard/>}/>
             </Routes>
         </Router>
     )
