@@ -15,7 +15,7 @@
   
   .empresa-header h2 {
     margin-left: 1.8rem;
-      color: white;
+      color: rgb(10, 9, 9);
     font-weight: 700;
   }
   .empresa-header > button{
@@ -64,11 +64,11 @@
     background-color: #C08900;
     color: white;
   }
-  
+
   .empresa-table tr {
-    background-color: gray;
+    background-color: rgb(236, 234, 234);
   }
-  
+
   .empresa-table tr:hover {
     background-color: #C08900;
   }
