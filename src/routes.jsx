@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 //import Home from './components/Home'
-import Cadastro from './components/Cadastro/Cadastro';
+
 import Login from './components/Login/login';
+import Cadastro from './components/Cadastro/Cadastro';
 import PlanoContas from './components/PlanoDeContas/planoContas';
 import Sidebar from './components/PlanoDeContas/Sidebar';
 import Header from './components/PlanoDeContas/Header';
@@ -15,11 +16,12 @@ function Main(){
         <Router>
             <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
             <Route path='/plano' element={<PlanoContas />}/>
             <Route path='/plano' element={<Sidebar />} />
             <Route path='/plano' element={<Header />}/>
-            <Route path='/Empresa' element={<Empresa />}/>
-            <Route path='/Dashboard' element={<Dashboard/>}/>
+            <Route path='/empresa' element={<Empresa />}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
             </Routes>
         </Router>
     )
