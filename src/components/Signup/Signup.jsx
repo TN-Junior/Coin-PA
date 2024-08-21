@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSpring, animated } from "@react-spring/web";
 import "./signup.css";
 
 function Signup() {
@@ -6,6 +7,13 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  // Animação de queda
+  const springProps = useSpring({
+    from: { transform: "translateY(-100%)" },
+    to: { transform: "translateY(0%)" },
+    config: { tension: 170, friction: 20 }, // Configurações de animação para suavidade
+  });
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -18,7 +26,7 @@ function Signup() {
 
   return (
     <div className="signup-container">
-      <div className="signup-content">
+      <animated.div style={springProps} className="signup-content">
         <div className="coin-title">COIN</div>
         <div className="signup-box">
           <form onSubmit={handleSignup}>
@@ -40,7 +48,7 @@ function Signup() {
         <div className="login-link">
           Já tem uma conta? <a href="/">Faça login</a>
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 }
