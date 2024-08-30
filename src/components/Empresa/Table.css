@@ -25,13 +25,13 @@
     display: flex;
     justify-content: center;
     border-radius: 100%;
-    background-color: #C08900;
+    background-color: #006ac0;
     color: white;
     font-weight: 700;
   }
   
   .add-button {
-    background-color: #c79e2e;
+    background-color: #006ac0;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -41,7 +41,7 @@
   }
   
   .empresa-header > button:hover {
-    background-color: #a88228;
+    background-color: #3989ca;
   }
   
   .table-container {
@@ -61,7 +61,7 @@
   }
   
   .empresa-table th {
-    background-color: #C08900;
+    background-color: #006ac0;
     color: white;
   }
 
@@ -70,6 +70,6 @@
   }
 
   .empresa-table tr:hover {
-    background-color: #C08900;
+    background-color: #006ac0;
   }
   
