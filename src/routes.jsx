@@ -20,8 +20,6 @@ function Main() {
                     path="/plano"
                     element={
                         <>
-                            <Header />
-                            <Sidebar />
                             <PlanoContas />
                         </>
                     }
