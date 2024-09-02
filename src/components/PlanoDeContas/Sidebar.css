@@ -9,7 +9,7 @@
 }
 
 .sidebar {
-  background-color: #C08900; /* cor do menu da esquerda */
+  background-color: #006dc0; /* cor do menu da esquerda */
   color: white;
   display: flex;
   flex-direction: column;
