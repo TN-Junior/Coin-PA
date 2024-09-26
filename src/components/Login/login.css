@@ -21,7 +21,7 @@
   font-size: 2rem;  /* Ajuste para responsividade */
   font-weight: 600;
   text-align: center;
-  color: #006ac0 !important; /* !important para verificar se o estilo é aplicado corretamente, o que indicaria um problema de prioridade *
+  color: #006ac0 !important; /* !important para verificar se o estilo é aplicado corretamente, o que indicaria um problema de prioridade */
   margin-bottom: 1rem;
 }
 
