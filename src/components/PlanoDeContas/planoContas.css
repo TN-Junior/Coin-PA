@@ -1,22 +1,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Adicionado para um melhor controle de espaçamento */
 }
-
-.ContainerPlanos {
+.ContainerPlanos{
   display: flex;
   flex-direction: column;
   width: 70rem;
-  margin-left: 3rem; /* Centralizando o conteúdo */
 }
-
-.ContainerGeral {
+.ContainerGeral{
   display: flex;
 }
-
 .plan-section {
-  margin: 2rem 0rem;
+  margin: 2rem 0rem 2rem 3rem ;
 }
 
 .text-button {
@@ -31,16 +26,15 @@
   align-items: center;
   background-color: #006ac0;
   border: none;
-  width: 2rem; /* Aumentado para 2rem para maior acessibilidade */
-  height: 2rem; /* Ajustado para um botão mais clicável */
+  width:1rem;
+  height: 30px;
   color: white;
   cursor: pointer;
   font-weight: 700;
-  border-radius: 50%;
-  font-size: 1.2rem; /* Tamanho de fonte ajustado */
+  border-radius: 100%;
 }
 
-thead {
+thead{
   border-color: white;
   border-style: solid;
   border-width: 1px;
@@ -48,7 +42,7 @@ thead {
 
 .table-content {
   width: 100%;
-  border-radius: 25px;
+  border-radius: 25rem;
 }
 
 .table-content table {
@@ -57,8 +51,7 @@ thead {
   margin-top: 2rem;
 }
 
-.table-content table th,
-.table-content table td {
+.table-content table th, .table-content table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid white;
@@ -69,11 +62,11 @@ thead {
   border-color: white;
   border-style: solid;
   border-width: 1px;
+  
 }
 
-.table-content table th {
+.table-content table th { /*primeira coluna do quadro */
   background-color: #006ac0;
-  color: white;
 }
 
 .status.agendada {
@@ -91,68 +84,6 @@ thead {
   font-weight: 700;
 }
 
-.table-content tbody td:hover {
-  background-color: #006ac0;
-  color: white; /* Para aumentar a legibilidade ao passar o mouse */
-}
-
-/* Modal styles */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaçamento entre os campos */
-}
-
-.modal-content label {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.modal-content input, 
-.modal-content select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.modal-actions {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.modal-actions button {
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-.modal-actions button:first-child {
-  background-color: #006ac0;
-  color: white;
-  border-radius: 4px;
-}
-
-.modal-actions button:last-child {
-  background-color: #ccc;
-  border-radius: 4px;
+.table-content tbody td:hover{
+  background-color:#006ac0;
 }
