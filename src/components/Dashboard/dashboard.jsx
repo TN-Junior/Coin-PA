@@ -1,6 +1,6 @@
 import React from 'react'
-import Sidebar from '../PlanoDeContas/Sidebar'
-import Header from '../PlanoDeContas/Header'
+import Sidebar from '../Sidebar/Sidebar'
+import Header from '../Header/Header'
 import Datadisplay from './datadisplay'
 
 

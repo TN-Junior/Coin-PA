@@ -1,11 +1,13 @@
 import React from 'react';
+import './Header.css'; // Estilo separado para o header
 
 const Header = () => {
-  return (
-    <header className="header">
-      <h1>Plataforma Ativa</h1>
-    </header>
-  );
+    return (
+        <div className="header">
+            <input type="text" placeholder="Pesquisar..." />
+                <button>Fernanda F.</button>
+        </div>
+    );
 };
 
 export default Header;

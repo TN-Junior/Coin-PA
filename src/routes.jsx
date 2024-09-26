@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login/login';
 import Signup from './components/Signup/Signup';  // Importando o componente de cadastro
 import PlanoContas from './components/PlanoDeContas/planoContas';
-import Sidebar from './components/PlanoDeContas/Sidebar';
-import Header from './components/PlanoDeContas/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header/Header';
 import Empresa from './components/Empresa/Empresa';
 import Dashboard from './components/Dashboard/dashboard';
 

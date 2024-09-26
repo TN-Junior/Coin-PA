@@ -1,7 +1,7 @@
 import React from 'react';
 import "../PlanoDeContas/planoContas.css";
-import Sidebar from "../PlanoDeContas/Sidebar"
-import Header from './Header';
+import Sidebar from "../Sidebar/Sidebar"
+import Header from '../Header/Header';
 
 const AccountPlan = () => {
 

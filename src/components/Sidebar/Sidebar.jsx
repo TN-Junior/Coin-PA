@@ -1,6 +1,6 @@
 import React from 'react';
 import './Sidebar.css';
-import Header from "../PlanoDeContas/Header"
+import Header from "../Header/Header"
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
