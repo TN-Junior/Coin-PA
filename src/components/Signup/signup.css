@@ -21,7 +21,7 @@
   font-size: 2rem;  /* Ajuste para responsividade */
   font-weight: 600;
   text-align: center;
-  color: #C08900;
+  color: #2b5d89;
   margin-bottom: 1rem;
 }
 
@@ -29,7 +29,7 @@
   width: 477px;  /* Definido conforme o layout */
   height: auto;  /* Ajustado para permitir expansão */
   padding: 20px;  /* Ajustado para manter espaçamento interno */
-  background-color: #C08900;
+  background-color: #2b5d89;
   border-radius: 20px 20px 20px 20px;  /* Definido conforme o layout */
   box-sizing: border-box;
   opacity: 1;  /* Ajustado para garantir que a caixa seja visível */
