@@ -14,11 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border-top-right-radius: 4rem;
-  border-bottom-right-radius: 4rem;
+  border-bottom-right-radius: 2.5rem;
   width: 240px;
- height: 92.4vh;
+  height: 100vh;
   padding: 40px 10px 30px 10px;
+  
 }
 
 .sidebar h1 {

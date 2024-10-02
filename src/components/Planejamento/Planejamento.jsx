@@ -1,26 +1,21 @@
-import React from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import Header from '../Header/Header'
-import Datadisplay from './datadisplay'
+import Table from './Table'
+import './Planejamento.css'
 
-
-const Dashboard = () => {
+const Planejamento = () => {
   return (
     <>
     <div className='ContainerEmpresa'>
         <Sidebar />
-        <Header />
         <div>
-          
-          <Datadisplay/>
+          <Header />
+          <Table />
         </div>
         
     </div>
-        
-       
-        
     </>
   )
 }
 
-export default Dashboard
+export default Planejamento;

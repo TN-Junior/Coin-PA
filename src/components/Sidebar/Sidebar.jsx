@@ -18,7 +18,7 @@ const Sidebar = () => {
                         <li className="active"><a href="/plano">Plano de Contas</a></li>
                         <li><a href="#pagamentos">Pagamentos</a></li>
                         <li><a href="#usuarios">Usuários</a></li>
-                        <li><a href="#planejamento">Planejamento</a></li>
+                        <li><Link to="/Planejamento">Planejamento</Link></li>
                     </ul>
                 </nav>
             </aside>
