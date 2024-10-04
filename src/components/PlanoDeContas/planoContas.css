@@ -10,9 +10,6 @@
   flex-direction: column;
   width: 70rem;
   margin-left: 1rem;
-  background-color: #f8f9fa; /* Fundo mais claro para destacar o conteúdo */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
   padding: 2rem;
 }
 
@@ -21,7 +18,7 @@
 }
 
 .plan-section {
-  margin: 2rem 0;
+ 
   padding: 1rem;
   background-color: #ffffff; /* Fundo branco para diferenciar do Container principal */
   border-radius: 8px;
@@ -31,8 +28,15 @@
 .text-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.text-button > h2{
+  color: #006ac0;
+  font-weight: 900;
+  font-size: 3rem;
 }
 
 .text-button > button {

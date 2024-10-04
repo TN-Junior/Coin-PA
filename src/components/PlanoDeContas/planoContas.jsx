@@ -41,7 +41,7 @@ const AccountPlan = () => {
                 <Sidebar />
 
                 <div className='ContainerPlanos'>
-                    <Header />
+                    
                     <section className='plan-section'>
                         <div className="text-button">
                             <h2>Plano de Contas</h2>
