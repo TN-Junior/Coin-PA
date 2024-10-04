@@ -6,14 +6,13 @@ import './Planejamento.css'
 const Planejamento = () => {
   return (
     <>
-    <div className='ContainerEmpresa'>
+      <div className='ContainerEmpresa'>
         <Sidebar />
         <div>
           <Header />
           <Table />
         </div>
-        
-    </div>
+      </div>
     </>
   )
 }
