@@ -1,22 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Table.css';
 
 function Table() {
   const [filter, setFilter] = useState('');
+  const [rows, setRows] = useState([]);
 
-  const rows = [
-    { id: '34.604.380/0001-95', vencimento: '05/2025', empresa: 'Procter & Gamble Company', status: 'Pendente' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Exxon Mobil Corporation', status: 'Paga' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Berkshire Hathaway Inc.', status: 'Pendente' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Coca-Cola Company', status: 'Pendente' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Toyota Motor Corporation', status: 'Paga' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Microsoft Corporation', status: 'Pendente' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Amazon.com, Inc.', status: 'Paga' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Tesla, Inc.', status: 'Pendente' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Facebook, Inc.', status: 'Paga' },
-    { id: '67.478.090/0001-00', vencimento: '05/2025', empresa: 'Nakia Ribeiro do Nas...', status: 'Pendente' },
-  ];
+  // Função para buscar os dados da API
+  useEffect(() => {
+    fetch('/api/contas')  // Atualize a URL conforme o endpoint do seu backend
+      .then(response => response.json())
+      .then(data => setRows(data))
+      .catch(error => console.error('Erro ao buscar dados:', error));
+  }, []);
 
+  // Função para adicionar uma nova conta
+  const handleAdicionar = () => {
+    // Aqui, você pode abrir um modal ou popup para que o usuário insira as informações necessárias.
+    const novaConta = {
+      id: '00.000.000/0001-00',
+      vencimento: '12/2025',
+      empresa: 'Nova Empresa',
+      status: 'Pendente'
+    };
+
+    fetch('/api/contas', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(novaConta),
+    })
+      .then(response => response.json())
+      .then(data => {
+        setRows(prevRows => [...prevRows, data]);
+      })
+      .catch(error => console.error('Erro ao adicionar nova conta:', error));
+  };
+
+  // Filtragem dos dados
   const filteredRows = filter
     ? rows.filter(row => row.status === filter) // Filtra os dados com base no status selecionado
     : rows; // Se não houver filtro, exibe todos os dados
@@ -26,29 +47,35 @@ function Table() {
       <div className="empresa-header">
         <h2>Planejamento</h2>
         <div className="actions">
-          <button className="btnAdicionar">+</button>
-          <button class="filtro" onClick={() => setFilter('Paga')}> Pagas</button>
-          <button class="filtro" onClick={() => setFilter('Pendente')}> Pendentes</button>
-          <button class="filtro" onClick={() => setFilter('')}> Todos</button>
+          <button className="btnAdicionar" onClick={handleAdicionar}>+</button>
+          <button className="filtro" onClick={() => setFilter('Paga')}>Pagas</button>
+          <button className="filtro" onClick={() => setFilter('Pendente')}>Pendentes</button>
+          <button className="filtro" onClick={() => setFilter('')}>Todos</button>
         </div>
       </div>
       <div className="table-container">
         <table className="empresa-table">
           <thead>
             <tr className='Title'>
-              <th>Identificação</th>
-              <th>Vencimento</th>
-              <th>Empresa</th>
-              <th>Classificação</th>
+              <th>Data de Cadastro</th>
+              <th>Conta</th>
+              <th>Status</th>
+              <th>Categoria</th>
+              <th>Valor</th>
+              <th>Data de Vencimento</th>
+              <th>Data de Pagamento</th>
             </tr>
           </thead>
           <tbody>
             {filteredRows.map((row, index) => (
               <tr key={index}>
+                <td>{row.dataCadastro}</td>
                 <td>{row.id}</td>
-                <td>{row.vencimento}</td>
-                <td>{row.empresa}</td>
                 <td>{row.status}</td>
+                <td>{row.categoria}</td>
+                <td>{row.valor}</td>
+                <td>{row.datavencimento}</td>
+                <td>{row.dataPagamento}</td>
               </tr>
             ))}
           </tbody>
