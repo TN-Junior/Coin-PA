@@ -10,9 +10,7 @@ const datadisplay = ({ userName }) => {
                 <div className="box">
                     <div className="box-title">Despesas</div>
                 </div>
-                <div className="box">
-                    <div className="box-title">Boletos</div>
-                </div>
+
                 <div className="box">
                     <div className="box-title">Finalizadas(Pagas)</div>
                 </div>
