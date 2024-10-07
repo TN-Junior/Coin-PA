@@ -24,10 +24,14 @@ function Table() {
     carregarContas();
   }, []);
 
-  const carregarContas = () => {
-    axios.get('http://localhost:8080/api/contas')
-      .then(response => setContas(response.data))
-      .catch(error => console.error('Erro ao carregar contas', error));
+  const carregarContas = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/contas');
+      setContas(response.data);
+      console.log('Contas carregadas:', response.data);
+    } catch (error) {
+      console.error('Erro ao carregar contas:', error);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -38,23 +42,21 @@ function Table() {
     });
   };
 
-  const adicionarOuEditarConta = () => {
-    if (isEditing) {
-      // Editar conta existente
-      axios.put(`http://localhost:8080/api/contas/${editId}`, novaConta)
-        .then(response => {
-          setContas(contas.map(conta => (conta.id === editId ? response.data : conta)));
-          resetForm();
-        })
-        .catch(error => console.error('Erro ao editar conta', error));
-    } else {
-      // Adicionar nova conta
-      axios.post('http://localhost:8080/api/contas', novaConta)
-        .then(response => {
-          setContas([...contas, response.data]);
-          resetForm();
-        })
-        .catch(error => console.error('Erro ao adicionar conta', error));
+  const adicionarOuEditarConta = async () => {
+    try {
+      if (isEditing) {
+        // Editar conta existente
+        const response = await axios.put(`http://localhost:8080/api/contas/${editId}`, novaConta);
+        setContas(contas.map(conta => (conta.id === editId ? response.data : conta)));
+      } else {
+        // Adicionar nova conta
+        const response = await axios.post('http://localhost:8080/api/contas', novaConta);
+        setContas([...contas, response.data]);
+      }
+      resetForm();
+      carregarContas(); // Recarrega a lista de contas para garantir a atualização
+    } catch (error) {
+      console.error('Erro ao adicionar ou editar conta:', error);
     }
   };
 
@@ -80,13 +82,14 @@ function Table() {
     setShowModal(true);
   };
 
-  const deletarConta = (id) => {
-    axios.delete(`http://localhost:8080/api/contas/${id}`)
-      .then(() => {
-        setContas(contas.filter(conta => conta.id !== id));
-        setContaSelecionada(null);
-      })
-      .catch(error => console.error('Erro ao deletar conta', error));
+  const deletarConta = async (id) => {
+    try {
+      await axios.delete(`http://localhost:8080/api/contas/${id}`);
+      setContas(contas.filter(conta => conta.id !== id));
+      setContaSelecionada(null);
+    } catch (error) {
+      console.error('Erro ao deletar conta:', error);
+    }
   };
 
   const selecionarConta = (conta) => {

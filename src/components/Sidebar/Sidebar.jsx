@@ -20,6 +20,7 @@ const Sidebar = () => {
                         <li className="active"><a href="/plano">Plano de Contas</a></li>
                         
                         <li><a href="#usuarios">Usuários</a></li>
+                        <li><a href="/">Sair</a></li>
                         
                     </ul>
                 </nav>

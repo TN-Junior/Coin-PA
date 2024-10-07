@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import axios from 'axios';
 import "./login.css";
@@ -7,6 +8,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Hook para redirecionamento
 
   // Animação de queda
   const springProps = useSpring({
@@ -18,17 +20,27 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/login', {
+      const response = await axios.post('http://localhost:5000/auth/login', {
         email,
         password
       });
 
-      // Se o login for bem-sucedido, você pode armazenar o token de autenticação ou redirecionar o usuário
+      // Se o login for bem-sucedido, redireciona para o /dashboard
       console.log('Login bem-sucedido:', response.data);
+
+      // Armazena o token no localStorage (opcional, se precisar usar para autenticação)
+      localStorage.setItem('token', response.data.token);
+
+      // Redireciona para a URL fornecida pelo backend
+      navigate(response.data.redirect_url); // Redireciona para o dashboard
     } catch (error) {
       // Tratar erros de login
+      if (error.response && error.response.status === 401) {
+        setError(error.response.data.message); // Exibir mensagem específica do backend
+      } else {
+        setError('Erro ao se conectar com o servidor. Tente novamente mais tarde.');
+      }
       console.error('Erro ao fazer login:', error);
-      setError('Credenciais inválidas. Tente novamente.');
     }
   };
 
