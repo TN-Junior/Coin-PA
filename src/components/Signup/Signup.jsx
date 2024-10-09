@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import "./signup.css";
 
 function Signup() {
@@ -41,10 +42,24 @@ function Signup() {
 
   return (
     <div className="signup-container">
+      <div className="area">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
       <animated.div style={springProps} className="signup-content">
-        <div className="coin-title">COIN</div>
+        <div className="coin-title">Coin</div>
         <div className="signup-box">
-          <form onSubmit={handleSignup}>
+          <form className="signupform" onSubmit={handleSignup}>
             <div>
               <input type="text" placeholder="Nome Completo" value={name} onChange={(e) => setName(e.target.value)} />
             </div>
@@ -58,12 +73,14 @@ function Signup() {
               <input type="password" placeholder="Confirme a Senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
             </div>
             {error && <div className="error-message">{error}</div>}
+            
+            <div className="login-link">
             <button type="submit">Cadastrar</button>
+            <button><Link to={"/"}>Login</Link></button>
+             </div>
           </form>
         </div>
-        <div className="login-link">
-          Já tem uma conta? <a href="/">Faça login</a>
-        </div>
+        
       </animated.div>
     </div>
   );
