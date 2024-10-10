@@ -25,7 +25,7 @@ function Signup() {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:5000/auth/register', {
+      const response = await axios.post('https://auth-coin.onrender.com/auth/register', {
         name,
         email,
         password
