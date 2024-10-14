@@ -26,7 +26,7 @@ function Table() {
 
   const carregarContas = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/contas');
+      const response = await axios.get('https://coin-backend-qrd3.onrender.com/api/contas');
       setContas(response.data);
       console.log('Contas carregadas:', response.data);
     } catch (error) {
@@ -46,11 +46,11 @@ function Table() {
     try {
       if (isEditing) {
         // Editar conta existente
-        const response = await axios.put(`http://localhost:8080/api/contas/${editId}`, novaConta);
+        const response = await axios.put(`https://coin-backend-qrd3.onrender.com/api/contas/${editId}`, novaConta);
         setContas(contas.map(conta => (conta.id === editId ? response.data : conta)));
       } else {
         // Adicionar nova conta
-        const response = await axios.post('http://localhost:8080/api/contas', novaConta);
+        const response = await axios.post('https://coin-backend-qrd3.onrender.com/api/contas', novaConta);
         setContas([...contas, response.data]);
       }
       resetForm();
@@ -84,7 +84,7 @@ function Table() {
 
   const deletarConta = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/contas/${id}`);
+      await axios.delete(`https://coin-backend-qrd3.onrender.com/api/contas/${id}`);
       setContas(contas.filter(conta => conta.id !== id));
       setContaSelecionada(null);
     } catch (error) {
@@ -191,7 +191,7 @@ function Table() {
         <table className="empresa-table">
           <thead>
             <tr className='Title'>
-              <th>Conta</th>
+              <th>Descrição</th>
               <th>Status</th>
               <th>Categoria</th>
               <th>Valor</th>
