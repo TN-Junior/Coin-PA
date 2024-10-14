@@ -39,7 +39,7 @@ const AccountPlan = () => {
         <>
             <div className='ContainerGeral'>
                 <Sidebar />
-
+                <Header />
                 <div className='ContainerPlanos'>
                     
                     <section className='plan-section'>

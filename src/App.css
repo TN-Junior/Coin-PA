@@ -5,6 +5,30 @@
   text-align: center;
 }
 
+/* Adicione isso no seu estilo global ou no estilo do layout da página principal */
+.ContainerGeral {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Garante que a página tenha a altura total da viewport */
+}
+
+/* Certifique-se de que o conteúdo abaixo do Header se ajuste corretamente */
+.main-content {
+  flex: 1; /* Faz com que o conteúdo principal ocupe o espaço restante */
+  overflow-y: auto; /* Permite rolagem se o conteúdo for muito grande */
+}
+
+/* Para o Header, verifique a altura */
+.header {
+  display: flex;
+  justify-content: space-between; /* Espaça a barra de pesquisa e o botão Fernanda F. */
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: #006dc0;
+  padding: 0 1rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

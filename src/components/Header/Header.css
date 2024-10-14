@@ -1,12 +1,26 @@
-.header{
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    height: 10vh;
-    
-    background-color: #006dc0;
-
+html{
+  overflow-x: hidden;
 }
+
+.header {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 10vh;
+  background-color: #006dc0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* To 
+  ensure it's always on top */
+  overflow: hidden;
+  padding-bottom: 10vh;
+}
+
+.search-bar{
+  margin-left: 15rem;
+}
+
 
 .header input {
     border-radius: 1.5rem;
