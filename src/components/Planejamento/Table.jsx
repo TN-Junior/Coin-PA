@@ -191,7 +191,7 @@ function Table() {
         <table className="empresa-table">
           <thead>
             <tr className='Title'>
-              <th>Conta</th>
+              <th>Descrição</th>
               <th>Status</th>
               <th>Categoria</th>
               <th>Valor</th>

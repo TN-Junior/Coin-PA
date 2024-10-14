@@ -16,7 +16,7 @@ function Main() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />  {/* Adicionando a rota para o cadastro */}
-                <Route path="//forgot-password" element={<ForgotPassword />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 {/* Agrupando Header, Sidebar e PlanoContas para a rota '/plano' */}
                 <Route
                     path="/plano"
