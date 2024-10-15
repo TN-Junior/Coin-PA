@@ -8,9 +8,11 @@ const Empresa = () => {
   return (
     <>
     <div className='ContainerEmpresa'>
+    <Header />
+        
+        <div className='segundoContainer'>
         <Sidebar />
-        <div>
-          <Header />
+        
           <Table />
         </div>
         

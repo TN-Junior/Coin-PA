@@ -11,10 +11,13 @@
   width: 70rem;
   margin-left: 1rem;
   padding: 2rem;
+  flex-grow: 1;
+
 }
 
 .ContainerGeral {
   display: flex;
+  padding-top: 10vh;
 }
 
 .plan-section {

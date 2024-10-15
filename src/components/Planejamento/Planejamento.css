@@ -1,3 +1,8 @@
 .ContainerEmpresa{
-  overflow-x:hidden;
+  display: flex;
+}
+
+.segundoContainer{
+  margin-top: 10vh;
+  display: flex;
 }

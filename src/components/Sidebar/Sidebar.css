@@ -9,23 +9,23 @@
 }
 
 .sidebar {
-  background-color: #006dc0; /* cor do menu da esquerda */
+  background-color: #006dc0;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   border-bottom-right-radius: 2.5rem;
   width: 240px;
-  height: 100vh;
+  height: auto; /* Altere de 100vh para auto */
+  min-height: 100vh; /* Garante que pelo menos ocupe a altura da viewport */
   padding: 40px 10px 30px 10px;
-  
 }
 
 .sidebar h1 {
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 40px;
   font-weight: 900;
-  margin-left: 3.4rem;
+  margin-left: 1.5rem;
 }
 
 .sidebar nav ul {
