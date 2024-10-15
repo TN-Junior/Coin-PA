@@ -15,7 +15,7 @@ const Sidebar = () => {
                     <ul>
                         <li><Link to="/Dashboard">Dashboard</Link></li>
                         <li><Link to="/Planejamento">Planejamento</Link></li>
-                        <li><a href="#pagamentos">Pagamentos</a></li>
+                        <li><Link to="/Pagamentos">Pagamentos</Link></li>
                         <li><Link to="/Empresa">Empresas</Link></li>
                         <li className="active"><a href="/plano">Plano de Contas</a></li>
                         

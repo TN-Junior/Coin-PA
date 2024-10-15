@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import Empresa from './components/Empresa/Empresa';
 import Dashboard from './components/Dashboard/dashboard';
 import Planejamento from './components/Planejamento/Planejamento'
+import Pagamentos from './components/Pagamentos/Pagamento';
 
 function Main() {
     return (
@@ -26,7 +27,7 @@ function Main() {
                         </>
                     }
                 />
-
+                <Route path="/pagamentos" element={<Pagamentos/>}/>
                 <Route path="/empresa" element={<Empresa />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/planejamento" element={<Planejamento />}/>
