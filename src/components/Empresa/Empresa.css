@@ -1,7 +1,6 @@
 
-.ContainerEmpresa{
-   
-    display: flex;
+.ContainerEmpresa{ 
+  display: flex;
   box-sizing: border-box;
 }
 

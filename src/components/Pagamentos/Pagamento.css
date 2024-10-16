@@ -11,6 +11,13 @@
   flex: 1;
 }
 
+.Pagamento {
+  margin: 0vw 3.39vw;
+  display: flex;
+  justify-content: center;
+  margin-left: 1.8rem;
+}
+
 .content {
   display: flex;
   flex-direction: column;

@@ -16,9 +16,13 @@ const Pagamentos = () => {
         <Header />
         <div className='segundoContainer'>
           <Sidebar />
+
           
           <div className='content'>
             {/* Switch visual em forma de botão */}
+            <div className= 'Pagamento'>
+            <h2>Pagamentos</h2>
+            </div>
             <div className='toggle-container'>
               <label className="switch">
                 <input 
@@ -30,7 +34,6 @@ const Pagamentos = () => {
               </label>
               <span>{isReceitas ? 'Receitas' : 'Despesas'}</span>
             </div>
-
             {/* Renderiza a tabela com base no estado */}
             <div className='table-container'>
               {isReceitas ? (
