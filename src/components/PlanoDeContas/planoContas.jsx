@@ -10,7 +10,7 @@ const AccountPlan = () => {
     const accounts = [
         { conta: 'Telefone', status: 'Agendada', categoria: 'Receita', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
         { conta: 'Luz', status: 'Paga', categoria: 'Despesa', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
-        { conta: 'Agua', status: 'Vencida', categoria: 'Receita', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
+        { conta: 'Água', status: 'Vencida', categoria: 'Receita', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
         { conta: 'Internet', status: 'Agendada', categoria: 'Receita', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
         { conta: 'Gás', status: 'Agendada', categoria: 'Receita', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
         { conta: 'Transporte', status: 'Agendada', categoria: 'Despesa', valor: 'R$ 1234,50', vencimento: '10-09-2014' },
