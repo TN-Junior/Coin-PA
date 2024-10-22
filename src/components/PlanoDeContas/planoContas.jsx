@@ -103,7 +103,7 @@ const AccountPlan = () => {
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Conta</th>
+                                        <th>Descrição</th>
                                         <th>Status</th>
                                         <th>Categoria</th>
                                         <th>Valor</th>
