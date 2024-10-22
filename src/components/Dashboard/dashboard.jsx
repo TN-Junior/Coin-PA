@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Fetch receitas
-    axios.get('http://localhost:8080/api/contas/receitas')
+    axios.get('https://coin-backend-qrd3.onrender.com/api/contas/receitas')
       .then(response => {
         const receitaValores = response.data.map(item => item.valor);
         setReceitas(receitaValores);
@@ -20,7 +20,7 @@ const Dashboard = () => {
       .catch(error => console.error('Error fetching receitas:', error));
 
     // Fetch despesas
-    axios.get('http://localhost:8080/api/contas/despesas')
+    axios.get('https://coin-backend-qrd3.onrender.com/api/contas/despesas')
       .then(response => {
         const despesaValores = response.data.map(item => item.valor);
         setDespesas(despesaValores);
