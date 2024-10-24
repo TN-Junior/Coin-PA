@@ -4,6 +4,7 @@ import axios from "axios";
 import "./forgotPassword.css";
 
 function ForgotPassword() {
+  const [email, setEmail] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -20,14 +21,15 @@ function ForgotPassword() {
     }
 
     try {
-      // Supondo que o endpoint de redefinição de senha seja este
+      // Endpoint de redefinição de senha
       const response = await axios.post("https://auth-coin.onrender.com/auth/reset-password", {
+        email,
         newPassword,
       });
 
       setSuccess("Senha redefinida com sucesso!");
       setTimeout(() => {
-        navigate("/login"); // Redirecionar para a tela de login após sucesso
+        navigate("/"); // Redirecionar para a tela de login após sucesso
       }, 2000);
     } catch (error) {
       setError("Erro ao redefinir a senha. Tente novamente.");
@@ -54,6 +56,13 @@ function ForgotPassword() {
       <div className="forgot-password-box">
         <h2>Redefinir Senha</h2>
         <form onSubmit={handlePasswordReset} className="forgot-password-form">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
           <input
             type="password"
             placeholder="Nova Senha"
