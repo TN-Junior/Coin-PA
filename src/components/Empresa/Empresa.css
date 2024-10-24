@@ -58,12 +58,14 @@
 .miniHeader{
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .miniHeader h2{
   font-size: 3rem;
   color: #006dc0;
   font-weight: 800;
+  margin-top: -7px;
 }
 
 .formGroup input {
@@ -94,4 +96,11 @@
 .form-actions{
   display: flex;
   justify-content: space-between!important;
+}
+
+.filter{
+  padding: 10px 20px;
+  border-color: #006dc0;
+  border-width: 1px;
+  border-radius: 10px;
 }

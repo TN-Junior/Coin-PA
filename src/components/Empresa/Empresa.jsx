@@ -11,12 +11,22 @@ const Empresa = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [selectedEmpresa, setSelectedEmpresa] = useState(null);
+  const [filtroSituacao, setFiltroSituacao] = useState("Todas");
   const [formValues, setFormValues] = useState({
     cnpj: "",
     nomeEmpresa: "",
-    situacaoCadastral: ""
+    situacaoCadastral: "",
   });
 
+  const filtrarEmpresas = (empresas, filtro) => {
+    if (filtro === "Todas") {
+      return empresas;
+    }
+    return empresas.filter(
+      (empresa) =>
+        empresa.situacaoCadastral.toLowerCase() === filtro.toLowerCase()
+    );
+  };
   useEffect(() => {
     axios
       .get("https://coin-backend-qrd3.onrender.com/api/empresas")
@@ -36,14 +46,14 @@ const Empresa = () => {
       setFormValues({
         cnpj: empresa.cnpj,
         nome: empresa.nome,
-        situacaoCadastral: empresa.situacaoCadastral
+        situacaoCadastral: empresa.situacaoCadastral,
       });
     } else {
       setEditMode(false);
       setFormValues({
         cnpj: "",
         nome: "",
-        situacaoCadastral: ""
+        situacaoCadastral: "",
       });
     }
     setModalOpen(true);
@@ -57,16 +67,24 @@ const Empresa = () => {
   const handleInputChange = (e) => {
     setFormValues({
       ...formValues,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSave = () => {
     if (editMode && selectedEmpresa) {
       // Editar empresa
-      axios.put(`https://coin-backend-qrd3.onrender.com/api/empresas/${selectedEmpresa.id}`, formValues)
+      axios
+        .put(
+          `https://coin-backend-qrd3.onrender.com/api/empresas/${selectedEmpresa.id}`,
+          formValues
+        )
         .then((response) => {
-          setEmpresas(empresas.map(emp => emp.id === selectedEmpresa.id ? response.data : emp));
+          setEmpresas(
+            empresas.map((emp) =>
+              emp.id === selectedEmpresa.id ? response.data : emp
+            )
+          );
           closeModal();
         })
         .catch((error) => {
@@ -74,7 +92,8 @@ const Empresa = () => {
         });
     } else {
       // Criar nova empresa
-      axios.post("https://coin-backend-qrd3.onrender.com/api/empresas", formValues)
+      axios
+        .post("https://coin-backend-qrd3.onrender.com/api/empresas", formValues)
         .then((response) => {
           setEmpresas([...empresas, response.data]);
           closeModal();
@@ -86,7 +105,8 @@ const Empresa = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`https://coin-backend-qrd3.onrender.com/api/empresas/${id}`)
+    axios
+      .delete(`https://coin-backend-qrd3.onrender.com/api/empresas/${id}`)
       .then(() => {
         setEmpresas(empresas.filter((empresa) => empresa.id !== id));
       })
@@ -104,7 +124,17 @@ const Empresa = () => {
           <div className="content">
             <div className="miniHeader">
               <h2>Empresas</h2>
-              <button className='add-button' onClick={() => openModal()}>
+              <div className="filter-container">
+                <select className="filter"
+                  value={filtroSituacao}
+                  onChange={(e) => setFiltroSituacao(e.target.value)}
+                >
+                  <option value="Todas">Todas</option>
+                  <option value="Ativa">Ativa</option>
+                  <option value="Inativa">Inativa</option>
+                </select>
+              </div>
+              <button className="add-button" onClick={() => openModal()}>
                 Adicionar Empresa
               </button>
             </div>
@@ -118,15 +148,25 @@ const Empresa = () => {
                 </tr>
               </thead>
               <tbody>
-                {empresas.length > 0 ? (
-                  empresas.map((empresa) => (
+                {filtrarEmpresas(empresas, filtroSituacao).length > 0 ? (
+                  filtrarEmpresas(empresas, filtroSituacao).map((empresa) => (
                     <tr key={empresa.id}>
                       <td>{empresa.cnpj}</td>
                       <td>{empresa.nome}</td>
                       <td>{empresa.situacaoCadastral}</td>
                       <td>
-                        <button className='editButton' onClick={() => openModal(empresa)}><MdEditNote /></button>
-                        <button className='deleteButton' onClick={() => handleDelete(empresa.id)}><MdDeleteForever /></button>
+                        <button
+                          className="editButton"
+                          onClick={() => openModal(empresa)}
+                        >
+                          <MdEditNote />
+                        </button>
+                        <button
+                          className="deleteButton"
+                          onClick={() => handleDelete(empresa.id)}
+                        >
+                          <MdDeleteForever />
+                        </button>
                       </td>
                     </tr>
                   ))
@@ -145,7 +185,9 @@ const Empresa = () => {
       {modalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <h2 className="titleAddEdit">{editMode ? "Editar Empresa" : "Adicionar Empresa"}</h2>
+            <h2 className="titleAddEdit">
+              {editMode ? "Editar Empresa" : "Adicionar Empresa"}
+            </h2>
             <form className="formGroup">
               <div>
                 <label>CNPJ:</label>
@@ -175,12 +217,16 @@ const Empresa = () => {
                 />
               </div>
               <div className="form-actions">
-              <button className="addBtn" type="button" onClick={handleSave}>
-                {editMode ? "Salvar Alterações" : "Adicionar Empresa"}
-              </button>
-              <button className="cancelarBtn" type="button" onClick={closeModal}>
-                Cancelar
-              </button>
+                <button className="addBtn" type="button" onClick={handleSave}>
+                  {editMode ? "Salvar Alterações" : "Adicionar Empresa"}
+                </button>
+                <button
+                  className="cancelarBtn"
+                  type="button"
+                  onClick={closeModal}
+                >
+                  Cancelar
+                </button>
               </div>
             </form>
           </div>

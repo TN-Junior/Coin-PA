@@ -151,6 +151,7 @@ function Table() {
             />
             <select
               name="categoria"
+              className='select'
               value={novaConta.categoria}
               onChange={handleInputChange}
             >
@@ -159,6 +160,7 @@ function Table() {
               <option value="Receitas">Receitas</option>
             </select>
             <input
+              className='inputSpace'
               type="number"
               name="valor"
               placeholder="Valor (ex: 1000.50)"
@@ -166,6 +168,7 @@ function Table() {
               onChange={handleInputChange}
             />
             <input
+              className='inputSpace'
               type="date"
               name="vencimento"
               placeholder="Vencimento"
@@ -173,6 +176,7 @@ function Table() {
               onChange={handleInputChange}
             />
             <input
+              className='inputSpace'
               type="date"
               name="pagamento"
               placeholder="Data de Pagamento"
