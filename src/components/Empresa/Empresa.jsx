@@ -19,7 +19,7 @@ const Empresa = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/empresas")
+      .get("https://coin-backend-qrd3.onrender.com/api/empresas")
       .then((response) => {
         console.log(response.data);
         setEmpresas(response.data);
@@ -64,7 +64,7 @@ const Empresa = () => {
   const handleSave = () => {
     if (editMode && selectedEmpresa) {
       // Editar empresa
-      axios.put(`http://localhost:8080/api/empresas/${selectedEmpresa.id}`, formValues)
+      axios.put(`https://coin-backend-qrd3.onrender.com/api/empresas/${selectedEmpresa.id}`, formValues)
         .then((response) => {
           setEmpresas(empresas.map(emp => emp.id === selectedEmpresa.id ? response.data : emp));
           closeModal();
@@ -74,7 +74,7 @@ const Empresa = () => {
         });
     } else {
       // Criar nova empresa
-      axios.post("http://localhost:8080/api/empresas", formValues)
+      axios.post("https://coin-backend-qrd3.onrender.com/api/empresas", formValues)
         .then((response) => {
           setEmpresas([...empresas, response.data]);
           closeModal();
@@ -86,7 +86,7 @@ const Empresa = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8080/api/empresas/${id}`)
+    axios.delete(`https://coin-backend-qrd3.onrender.com/api/empresas/${id}`)
       .then(() => {
         setEmpresas(empresas.filter((empresa) => empresa.id !== id));
       })

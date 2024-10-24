@@ -23,6 +23,7 @@ const Dashboard = () => {
     axios.get('https://coin-backend-qrd3.onrender.com/api/contas/despesas')
       .then(response => {
         const despesaValores = response.data.map(item => item.valor);
+        console.log(despesaValores);
         setDespesas(despesaValores);
       })
       .catch(error => console.error('Error fetching despesas:', error));
